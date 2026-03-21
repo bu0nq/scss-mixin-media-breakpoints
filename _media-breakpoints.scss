@@ -1,0 +1,55 @@
+@use "@bu0nq/scss-function-rem" as *;
+
+$breakpoint-xs: 480px !default;
+$breakpoint-sm: 640px !default;
+$breakpoint-md: 768px !default;
+$breakpoint-lg: 1024px !default;
+$breakpoint-xl: 1280px !default;
+
+$breakpoints: (
+  xs: $breakpoint-xs,
+  sm: $breakpoint-sm,
+  md: $breakpoint-md,
+  lg: $breakpoint-lg,
+  xl: $breakpoint-xl,
+) !default;
+
+@mixin media-breakpoint-min($breakpoint) {
+  $value: rem(map-get($breakpoints, $breakpoint));
+
+  @if ($value == 0) {
+    @content;
+  } @else {
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-max($breakpoint) {
+  $value: rem(map-get($breakpoints, $breakpoint));
+
+  @if ($value == 0) {
+    @content;
+  }
+  @else {
+    @media screen and (max-width: ($value - 1px)) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-from-to($from, $to) {
+  $value-min: rem(map-get($breakpoints, $from));
+  $value-max: rem(map-get($breakpoints, $to) - 1px);
+
+  @if ($value-min == 0) {
+    @media screen and (max-width: $value-max) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $value-min) and (max-width: $value-max) {
+      @content;
+    }
+  }
+}
