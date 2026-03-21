@@ -5,6 +5,7 @@ $breakpoint-sm: 640px !default;
 $breakpoint-md: 768px !default;
 $breakpoint-lg: 1024px !default;
 $breakpoint-xl: 1280px !default;
+$breakpoint-xxl: 1536px !default;
 
 $breakpoints: (
   xs: $breakpoint-xs,
@@ -12,6 +13,7 @@ $breakpoints: (
   md: $breakpoint-md,
   lg: $breakpoint-lg,
   xl: $breakpoint-xl,
+  xxl: $breakpoint-xxl,
 ) !default;
 
 @mixin media-breakpoint-min($breakpoint) {
@@ -20,7 +22,7 @@ $breakpoints: (
   @if ($value == 0) {
     @content;
   } @else {
-    @media screen and (min-width: $value) {
+    @media only screen and (min-width: $value) {
       @content;
     }
   }
@@ -33,7 +35,7 @@ $breakpoints: (
     @content;
   }
   @else {
-    @media screen and (max-width: ($value - 1px)) {
+    @media only screen and (max-width: ($value - 1px)) {
       @content;
     }
   }
@@ -44,11 +46,11 @@ $breakpoints: (
   $value-max: rem(map-get($breakpoints, $to) - 1px);
 
   @if ($value-min == 0) {
-    @media screen and (max-width: $value-max) {
+    @media only screen and (max-width: $value-max) {
       @content;
     }
   } @else {
-    @media screen and (min-width: $value-min) and (max-width: $value-max) {
+    @media only screen and (min-width: $value-min) and (max-width: $value-max) {
       @content;
     }
   }
