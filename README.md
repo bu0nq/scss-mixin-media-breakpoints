@@ -58,5 +58,6 @@ You can redefine the default values for the specified variables when importing t
     $breakpoint-lg: 1280px,
     $breakpoint-xl: 1440px,
     $breakpoint-xxl: 1536px,
+    $baseline: 16,
 );
 ```
