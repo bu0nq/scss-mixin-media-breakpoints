@@ -18,8 +18,12 @@ $breakpoints: (
   xxl: $breakpoint-xxl,
 ) !default;
 
-@mixin media-breakpoint-min($breakpoint) {
-  $value: rem(map-get($breakpoints, $breakpoint));
+$baseline: 16 !default;
+
+@mixin media-breakpoint-min(
+  $min
+) {
+  $value: rem(map-get($breakpoints, $min), $baseline);
 
   @if ($value == 0) {
     @content;
@@ -30,8 +34,10 @@ $breakpoints: (
   }
 }
 
-@mixin media-breakpoint-max($breakpoint) {
-  $value: rem(map-get($breakpoints, $breakpoint));
+@mixin media-breakpoint-max(
+  $max
+) {
+  $value: rem(map-get($breakpoints, $max), $baseline);
 
   @if ($value == 0) {
     @content;
@@ -43,9 +49,12 @@ $breakpoints: (
   }
 }
 
-@mixin media-breakpoint-min-max($from, $to) {
-  $value-min: rem(map-get($breakpoints, $from));
-  $value-max: rem(map-get($breakpoints, $to) - 1px);
+@mixin media-breakpoint-min-max(
+  $min,
+  $max
+) {
+  $value-min: rem(map-get($breakpoints, $min), $baseline);
+  $value-max: rem(map-get($breakpoints, $max) - 1px, $baseline);
 
   @if ($value-min == 0) {
     @media only screen and (max-width: $value-max) {
