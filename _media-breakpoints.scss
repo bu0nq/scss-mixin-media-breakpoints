@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "@bu0nq/scss-function-rem" as *;
 
 $breakpoint-xxs: 480px !default;
@@ -16,19 +17,17 @@ $breakpoints: (
   lg: $breakpoint-lg,
   xl: $breakpoint-xl,
   xxl: $breakpoint-xxl,
-) !default;
-
-$baseline: 16 !default;
+);
 
 @mixin media-breakpoint-min(
   $min
 ) {
-  $value: rem(map-get($breakpoints, $min), $baseline);
+  $value: map.get($breakpoints, $min);
 
   @if ($value == 0) {
     @content;
   } @else {
-    @media only screen and (min-width: $value) {
+    @media only screen and (min-width: rem($value)) {
       @content;
     }
   }
@@ -37,13 +36,13 @@ $baseline: 16 !default;
 @mixin media-breakpoint-max(
   $max
 ) {
-  $value: rem(map-get($breakpoints, $max), $baseline);
+  $value: map.get($breakpoints, $max) - 1px;
 
   @if ($value == 0) {
     @content;
   }
   @else {
-    @media only screen and (max-width: ($value - 1px)) {
+    @media only screen and (max-width: rem($value)) {
       @content;
     }
   }
@@ -53,15 +52,15 @@ $baseline: 16 !default;
   $min,
   $max
 ) {
-  $value-min: rem(map-get($breakpoints, $min), $baseline);
-  $value-max: rem(map-get($breakpoints, $max) - 1px, $baseline);
+  $value-min: map.get($breakpoints, $min);
+  $value-max: map.get($breakpoints, $max) - 1px;
 
   @if ($value-min == 0) {
-    @media only screen and (max-width: $value-max) {
+    @media only screen and (max-width: rem($value-max)) {
       @content;
     }
   } @else {
-    @media only screen and (min-width: $value-min) and (max-width: $value-max) {
+    @media only screen and (min-width: rem($value-min)) and (max-width: rem($value-max)) {
       @content;
     }
   }
