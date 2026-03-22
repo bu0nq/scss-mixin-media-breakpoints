@@ -1,14 +1,17 @@
 # SCSS Mixin Media Breakpoints
 
-Package for integrating `SCSS Mixin Media Breakpoints` in a web environment.
+A package for integrating the `px` to `rem` conversion function.
 
 ![npm](https://img.shields.io/npm/v/@bu0nq/scss-mixin-media-breakpoints?style=for-the-badge)
 ![npm](https://img.shields.io/npm/dt/@bu0nq/scss-mixin-media-breakpoints?style=for-the-badge)
+
+Documentation: [EN](README.md) | [RU](README.RU.md)
+
 ___
 
 ## Installation
 
-This package can be deployed automatically using NPM:
+You can install the package automatically using NPM:
 
 ```
 npm i @bu0nq/scss-mixin-media-breakpoints
@@ -16,21 +19,35 @@ npm i @bu0nq/scss-mixin-media-breakpoints
 
 ## Usage
 
-Import in your project depending on your setup:
+To use the package, import it into your project:
 
 ```scss
 @use "@bu0nq/scss-mixin-media-breakpoints" as *;
+
+.demo {
+    @include mixin.media-breakpoint-min(xl) {
+        width: 100%;
+    };
+}
 ```
 
-## List mixins
+## Changing the namespace
 
-* media-breakpoint-min(size)
-* media-breakpoint-max(size)
-* media-breakpoint-min-max(size, size)
+You can change the namespace during function import and use the function with a different namespace:
 
-## Change variables
+```scss
+@use "@bu0nq/scss-mixin-media-breakpoints" as mixin;
 
-You can redefine the default values of variables when importing a `mixin`:
+.demo {
+    @include mixin.media-breakpoint-min(xl) {
+        width: 100%;
+    };
+}
+```
+
+## Changing the variables
+
+You can redefine the default values for the specified variables when importing the function:
 
 ```scss
 @use "@bu0nq/scss-mixin-media-breakpoints" as * with (
@@ -42,18 +59,4 @@ You can redefine the default values of variables when importing a `mixin`:
     $breakpoint-xl: 1440px,
     $breakpoint-xxl: 1536px,
 );
-```
-
-## Change namespace
-
-You can change the namespace during import and use the `mixin` with a different namespace:
-
-```scss
-@use "@bu0nq/scss-mixin-media-breakpoints" as mixin;
-
-.demo {
-    @include mixin.media-breakpoint-min-max(xl) {
-        background-color: hsl(120, 100%, 25%);
-    }
-}
 ```
