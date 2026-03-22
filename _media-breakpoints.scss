@@ -19,22 +19,26 @@ $breakpoints: (
   xxl: $breakpoint-xxl,
 );
 
+$baseline: 16 !default;
+
 @mixin media-breakpoint-min(
-  $breakpoint-min
+  $breakpoint-min,
+  $baseline: $baseline
 ) {
   $value: map.get($breakpoints, $breakpoint-min);
 
   @if ($value == 0) {
     @content;
   } @else {
-    @media only screen and (min-width: rem($value)) {
+    @media only screen and (min-width: rem($value, $baseline)) {
       @content;
     }
   }
 }
 
 @mixin media-breakpoint-max(
-  $breakpoint-max
+  $breakpoint-max,
+  $baseline: $baseline
 ) {
   $value: map.get($breakpoints, $breakpoint-max) - 1px;
 
@@ -42,7 +46,7 @@ $breakpoints: (
     @content;
   }
   @else {
-    @media only screen and (max-width: rem($value)) {
+    @media only screen and (max-width: rem($value, $baseline)) {
       @content;
     }
   }
@@ -50,17 +54,18 @@ $breakpoints: (
 
 @mixin media-breakpoint-min-max(
   $breakpoint-min,
-  $breakpoint-max
+  $breakpoint-max,
+  $baseline: $baseline
 ) {
   $value-min: map.get($breakpoints, $breakpoint-min);
   $value-max: map.get($breakpoints, $breakpoint-max) - 1px;
 
   @if ($value-min == 0) {
-    @media only screen and (max-width: rem($value-max)) {
+    @media only screen and (max-width: rem($value-max, $baseline)) {
       @content;
     }
   } @else {
-    @media only screen and (min-width: rem($value-min)) and (max-width: rem($value-max)) {
+    @media only screen and (min-width: rem($value-min, $baseline)) and (max-width: rem($value-max, $baseline)) {
       @content;
     }
   }
