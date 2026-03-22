@@ -1,13 +1,15 @@
 @use "@bu0nq/scss-function-rem" as *;
 
-$breakpoint-xs: 480px !default;
-$breakpoint-sm: 640px !default;
-$breakpoint-md: 768px !default;
-$breakpoint-lg: 1024px !default;
-$breakpoint-xl: 1280px !default;
+$breakpoint-xxs: 480px !default;
+$breakpoint-xs: 640px !default;
+$breakpoint-sm: 768px !default;
+$breakpoint-md: 1024px !default;
+$breakpoint-lg: 1280px !default;
+$breakpoint-xl: 1440px !default;
 $breakpoint-xxl: 1536px !default;
 
 $breakpoints: (
+  xxs: $breakpoint-xxs,
   xs: $breakpoint-xs,
   sm: $breakpoint-sm,
   md: $breakpoint-md,
@@ -41,7 +43,7 @@ $breakpoints: (
   }
 }
 
-@mixin media-breakpoint-from-to($from, $to) {
+@mixin media-breakpoint-min-max($from, $to) {
   $value-min: rem(map-get($breakpoints, $from));
   $value-max: rem(map-get($breakpoints, $to) - 1px);
 
