@@ -1,6 +1,6 @@
 # SCSS Mixin Media Breakpoints
 
-A package for integrating the `px` to `rem` conversion function.
+A package for integrating a mixin for creating media queries.
 
 ![npm](https://img.shields.io/npm/v/@bu0nq/scss-mixin-media-breakpoints?style=for-the-badge)
 ![npm](https://img.shields.io/npm/dt/@bu0nq/scss-mixin-media-breakpoints?style=for-the-badge)
