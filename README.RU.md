@@ -38,7 +38,9 @@ npm i @bu0nq/scss-mixin-media-breakpoints
 | media-breakpoint-max     | breakpoint-max, breakpoint-baseline                 |
 | media-breakpoint-min-max | breakpoint-min, breakpoint-max, breakpoint-baseline |
 
-`brekpoint-min`, `breakpoint-max` могут принимать следующие значения: xxs, xs, sm, md, lg, xl, xxl.
+`brekpoint-min`, `breakpoint-max`: могут принимать следующие значения: xxs, xs, sm, md, lg, xl, xxl.
+
+`breakpoint-baseline`: принимает значение при преобразовании `px` в `rem`, значение по умолчанию установлено равным 16 пикселям. 
 
 ## Изменение пространства имен
 
