@@ -25,7 +25,7 @@ To use the package, import it into your project:
 @use "@bu0nq/scss-mixin-media-breakpoints" as *;
 
 .demo {
-    @include mixin.media-breakpoint-min(xl) {
+    @include media-breakpoint-min(xl) {
         width: 100%;
     };
 }
@@ -33,7 +33,7 @@ To use the package, import it into your project:
 
 ## Changing the namespace
 
-You can change the namespace during function import and use the function with a different namespace:
+You can change the namespace during mixin import and use the mixin with a different namespace:
 
 ```scss
 @use "@bu0nq/scss-mixin-media-breakpoints" as mixin;
@@ -47,7 +47,7 @@ You can change the namespace during function import and use the function with a 
 
 ## Changing the variables
 
-You can redefine the default values for the specified variables when importing the function:
+You can redefine the default values for the specified variables when importing the mixin:
 
 ```scss
 @use "@bu0nq/scss-mixin-media-breakpoints" as * with (
@@ -58,6 +58,6 @@ You can redefine the default values for the specified variables when importing t
     $breakpoint-lg: 1280px,
     $breakpoint-xl: 1440px,
     $breakpoint-xxl: 1536px,
-    $baseline: 16,
+    $breakpoint-baseline: 16,
 );
 ```
