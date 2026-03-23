@@ -75,3 +75,7 @@ You can redefine the default values for the specified variables when importing t
     $breakpoint-baseline: 16,
 );
 ```
+
+## Dependencies
+
+* [@bu0nq/scss-function-rem](https://github.com/bu0nq/scss-function-rem)
