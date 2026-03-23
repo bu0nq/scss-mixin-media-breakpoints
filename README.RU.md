@@ -1,0 +1,60 @@
+# SCSS Mixin Media Breakpoints
+
+Пакет для интеграции миксина для создания медиа-запросов.
+
+Документация: [EN](README.md) | [RU](README.RU.md)
+
+___
+
+## Установка
+
+Вы можете установить пакет автоматически с помощью NPM:
+
+```
+npm i @bu0nq/scss-mixin-media-breakpoints
+```
+
+## Использование
+
+Чтобы использовать этот пакет, импортируйте его в свой проект:
+
+```scss
+@use "@bu0nq/scss-mixin-media-breakpoints" as *;
+
+.demo {
+    @include media-breakpoint-min(xl) {
+        width: 100%;
+    };
+}
+```
+
+## Изменение пространства имен
+
+Вы можете изменить пространство имен во время импорта миксина и использовать миксин с другим пространством имен:
+
+```scss
+@use "@bu0nq/scss-mixin-media-breakpoints" as mixin;
+
+.demo {
+    @include mixin.media-breakpoint-min(xl) {
+        width: 100%;
+    };
+}
+```
+
+## Изменение переменных
+
+Вы можете переопределить значения по умолчанию для указанных переменных при импорте миксина:
+
+```scss
+@use "@bu0nq/scss-mixin-media-breakpoints" as * with (
+    $breakpoint-xxs: 480px,
+    $breakpoint-xs: 640px,
+    $breakpoint-sm: 768px,
+    $breakpoint-md: 1024px,
+    $breakpoint-lg: 1280px,
+    $breakpoint-xl: 1440px,
+    $breakpoint-xxl: 1536px,
+    $breakpoint-baseline: 16,
+);
+```
