@@ -72,3 +72,7 @@ npm i @bu0nq/scss-mixin-media-breakpoints
     $breakpoint-baseline: 16,
 );
 ```
+
+## Зависимости
+
+* [@bu0nq/scss-function-rem](https://github.com/bu0nq/scss-function-rem)
