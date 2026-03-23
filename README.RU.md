@@ -28,6 +28,16 @@ npm i @bu0nq/scss-mixin-media-breakpoints
 }
 ```
 
+## Миксины
+
+В пакете представлены следующие миксины для использования:
+
+| Название                 | Переменные                                          |
+|--------------------------|-----------------------------------------------------|
+| media-breakpoint-min     | breakpoint-min, breakpoint-baseline                 |
+| media-breakpoint-max     | breakpoint-max, breakpoint-baseline                 |
+| media-breakpoint-min-max | breakpoint-min, breakpoint-max, breakpoint-baseline |
+
 ## Изменение пространства имен
 
 Вы можете изменить пространство имен во время импорта миксина и использовать миксин с другим пространством имен:
