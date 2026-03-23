@@ -31,6 +31,16 @@ To use the package, import it into your project:
 }
 ```
 
+## Mixins
+
+The package contains the following mixins to use:
+
+| Name                     | Variables                                           |
+|--------------------------|-----------------------------------------------------|
+| media-breakpoint-min     | breakpoint-min, breakpoint-baseline                 |
+| media-breakpoint-max     | breakpoint-max, breakpoint-baseline                 |
+| media-breakpoint-min-max | breakpoint-min, breakpoint-max, breakpoint-baseline |
+
 ## Changing the namespace
 
 You can change the namespace during mixin import and use the mixin with a different namespace:
