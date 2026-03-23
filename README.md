@@ -41,6 +41,8 @@ The package contains the following mixins to use:
 | media-breakpoint-max     | breakpoint-max, breakpoint-baseline                 |
 | media-breakpoint-min-max | breakpoint-min, breakpoint-max, breakpoint-baseline |
 
+`brekpoint-min`, `breakpoint-max` могут принимать следующие значения: xxs, xs, sm, md, lg, xl, xxl.
+
 ## Changing the namespace
 
 You can change the namespace during mixin import and use the mixin with a different namespace:
