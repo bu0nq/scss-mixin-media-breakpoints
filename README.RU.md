@@ -38,7 +38,7 @@ npm i @bu0nq/scss-mixin-media-breakpoints
 | media-breakpoint-max     | breakpoint-max, breakpoint-baseline                 |
 | media-breakpoint-min-max | breakpoint-min, breakpoint-max, breakpoint-baseline |
 
-`brekpoint-min`, `breakpoint-max` It can take the following values: xxs, xs, sm, md, lg, xl, xxl.
+`brekpoint-min`, `breakpoint-max` могут принимать следующие значения: xxs, xs, sm, md, lg, xl, xxl.
 
 ## Изменение пространства имен
 
