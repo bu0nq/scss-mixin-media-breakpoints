@@ -30,7 +30,7 @@ $breakpoint-baseline: 16 !default;
   @if ($value == 0) {
     @content;
   } @else {
-    @media only screen and (min-width: rem($value, $breakpoint-baseline)) {
+    @media (min-width: rem($value, $breakpoint-baseline)) {
       @content;
     }
   }
@@ -46,7 +46,7 @@ $breakpoint-baseline: 16 !default;
     @content;
   }
   @else {
-    @media only screen and (max-width: rem($value, $breakpoint-baseline)) {
+    @media (max-width: rem($value, $breakpoint-baseline)) {
       @content;
     }
   }
@@ -61,11 +61,11 @@ $breakpoint-baseline: 16 !default;
   $value-max: map.get($breakpoints, $breakpoint-max) - 1px;
 
   @if ($value-min == 0) {
-    @media only screen and (max-width: rem($value-max, $breakpoint-baseline)) {
+    @media (max-width: rem($value-max, $breakpoint-baseline)) {
       @content;
     }
   } @else {
-    @media only screen and (min-width: rem($value-min, $breakpoint-baseline)) and (max-width: rem($value-max, $breakpoint-baseline)) {
+    @media (min-width: rem($value-min, $breakpoint-baseline)) and (max-width: rem($value-max, $breakpoint-baseline)) {
       @content;
     }
   }
